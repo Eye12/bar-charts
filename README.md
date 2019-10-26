@@ -1,6 +1,8 @@
-# bar-charts-react
-This is a flexible bar charts. you can choose some properties as you want. to make the bar charts as you want
-![Image text](https://raw.githubusercontent.com/Eye12/img-folder/master/img/bar-charts.jpg)
+# bar-charts
+This is a flexible and self-adaption bar charts. <br/>
+you can choose some properties as you like to make the bar charts as you want.<br/>
+<br/>
+<img src="https://raw.githubusercontent.com/Eye12/img-folder/master/img/bar-charts.jpg" width="400px" height="auto" />
 
 ## Installation <br/>
 npm install bar-charts-react --dev

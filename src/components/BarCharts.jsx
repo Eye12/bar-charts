@@ -55,7 +55,7 @@ class BarCharts extends Component {
     };
     ratio = (window.devicePixelRatio || 1);
     canvasHeight = this.props.height || 300;
-    canvasWidth = this.getDeviceWidth() || this.props.width;
+    canvasWidth = this.props.width || this.getDeviceWidth();
     font = this.props.font || BASE_FONT;
     padding = this.props.padding || BASE_PADDING;
     textMargin = this.props.textMargin || BASE_TEXT_MARGIN;
@@ -102,8 +102,8 @@ class BarCharts extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            xAxisData: props.xAxisData || BASE_X_AXIS,
-            yAxisData: props.yAxisData || BASE_Y_AXIS,
+            xAxisDatas: props.xAxisDatas || BASE_X_AXIS,
+            yAxisDatas: props.yAxisDatas || BASE_Y_AXIS,
             markIndex: props.markIndex !== undefined ? props.markIndex : BASE_MARK_INDEX
         }
     }
@@ -116,9 +116,36 @@ class BarCharts extends Component {
         this.canvasUpdate();
     }
 
-    // UNSAFE_componentWillReceiveProps(nextProps) {
-    //     console.log("=========>>>", "hellow");
-    // }
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        let {
+            xAxisDatas,
+            yAxisDatas,
+            markIndex
+        } = this.props;
+        if(JSON.stringify(xAxisDatas) !== JSON.stringify(nextProps.xAxisDatas)) {
+            this.setState({
+                xAxisDatas: nextProps.xAxisDatas
+            }, () => {
+                this.canvasUpdate();
+            })
+        }
+
+        if(JSON.stringify(yAxisDatas) !== JSON.stringify(nextProps.yAxisDatas)) {
+            this.setState({
+                yAxisDatas: nextProps.yAxisDatas
+            }, () => {
+                this.canvasUpdate();
+            })
+        }
+
+        if(markIndex !== nextProps.markIndex) {
+            this.setState({
+                markIndex: nextProps.markIndex
+            }, () => {
+                this.canvasUpdate();
+            })
+        }
+    }
 
     shouldComponentUpdate() {
         return false;
@@ -205,8 +232,8 @@ class BarCharts extends Component {
                 scaleDirectionX,
                 scaleDirectionY
             } = this,
-            {yAxisData} = this.state,
-            textMaxWidth = getTextMaxWidth(ctx, yAxisData, font),
+            {yAxisDatas} = this.state,
+            textMaxWidth = getTextMaxWidth(ctx, yAxisDatas, font),
             textMaxHeight = getNumber(font),
             scaleLengthX = scaleDirectionX === "bottom" ? scaleLength : 0,
             scaleLengthY = scaleDirectionY === "left" ? scaleLength : 0,
@@ -244,8 +271,8 @@ class BarCharts extends Component {
     // 画刻度线以及刻度线对应的文字（特别说明：柱状图也在该方法中绘制的）
     drawScaleAndTxt = (ctx) => {
         let {
-                yAxisData,
-                xAxisData,
+                yAxisDatas,
+                xAxisDatas,
                 markIndex
             } = this.state,
             {
@@ -294,12 +321,12 @@ class BarCharts extends Component {
         ///****************************************************************///
 
         // 检测传入的X、Y轴参数是否合法
-        this.checkParams(xAxisData);
-        this.checkParams(yAxisData);
+        this.checkParams(xAxisDatas);
+        this.checkParams(yAxisDatas);
 
         // 整理x轴数据
-        for (let i in xAxisData) {
-            let {title = "", flex = "undefined", value = undefined} = xAxisData[i];
+        for (let i in xAxisDatas) {
+            let {title = "", flex = "undefined", value = undefined} = xAxisDatas[i];
             if (value === undefined) return console.error("value is required!");
             xAxisValues.push(value);
             xAxisTitles.push(title);
@@ -307,8 +334,8 @@ class BarCharts extends Component {
         }
 
         // 整理Y轴值
-        for (let i in yAxisData) {
-            let {title = "", flex = "undefined", value = undefined} = yAxisData[i];
+        for (let i in yAxisDatas) {
+            let {title = "", flex = "undefined", value = undefined} = yAxisDatas[i];
             if (value === undefined) return console.error("value is required!");
             let patt = new RegExp(value, "i"),
                 hasEqualValue = patt.test(String(yAxisValues));
