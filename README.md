@@ -28,6 +28,13 @@ yarn add bar-charts-react --dev
     
     
 ## Properties <br/>
-    | 属性 | 说明 | 类型 | 默认值
-    - | :-: | :-: | :-: | -:
+| 属性 | 说明 | 类型 | 默认值 |
+|:-------------:|:-------------:|:-------------:|:-------------:|
+| width | 画布宽 | number | 设备屏幕可视宽度值 |
+| height | 画布高 | number | 300 |
+| xAxisDatas | X轴相关数据 | array | BASE_X_AXIS（见./utils/globalConst.js） |
+| yAxisDatas | Y轴相关数据 | array | BASE_Y_AXIS（见./utils/globalConst.js） |
+| markIndex | 显示指定柱子标记索引值 | number | "none" |
+| font | 文字大小以及字体样式 | string | 20px Arial |
+| padding | 画布内边距 | number | 20 |
 
