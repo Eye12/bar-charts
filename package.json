@@ -1,14 +1,14 @@
 {
-  "name": "bar-charts",
+  "name": "bar-charts-in-react",
   "sideEffects": false,
   "version": "1.0.0",
   "description": "This is a flexible bar charts",
-  "main": "dist/index.js",
-  "files": [],
+  "main": "lib/index.js",
   "private": false,
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --config webpack.config.js --open --port 3000",
     "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "build-plugin": "babel src -d lib",
     "watch": "NODE_ENV=development webpack --config webpack.config.js --watch"
   },
   "repository": {
@@ -16,8 +16,11 @@
     "url": "https://github.com/Eye12/bar-charts"
   },
   "keywords": [
-    "react-scaffold",
-    "custom-react-plugin",
+    "bar chatrs",
+    "flexible bar chatrs",
+    "bar graph",
+    "react",
+    "mobile",
     "npm"
   ],
   "author": "lle_wang",
@@ -27,6 +30,7 @@
   },
   "homepage": "https://github.com/Eye12/bar-charts",
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.0",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.6.0",
