@@ -28,4 +28,6 @@ yarn add bar-charts-react --dev
     
     
 ## Properties <br/>
+    | 属性 | 说明 | 类型 | 默认值
+    - | :-: | :-: | :-: | -:
 
