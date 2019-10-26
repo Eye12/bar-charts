@@ -8,7 +8,7 @@ import {
     getMaxNumber,
     roundRect,
     circlePoint
-} from "./utils/utils";
+} from "../utils/utils";
 import {
     BASE_X_AXIS,
     BASE_Y_AXIS,
@@ -47,9 +47,9 @@ import {
     MARK_FONT,
     ROUND_RECT_BGCOLOR,
     MARK_TEXT_COLOR
-} from "./utils/globalConst";
+} from "../utils/globalConst";
 
-class ChartBar extends Component {
+class BarCharts extends Component {
     getDeviceWidth = () => {
         return window.innerWidth || document.documentElement.clientWidth;
     };
@@ -550,4 +550,4 @@ class ChartBar extends Component {
     }
 }
 
-export default ChartBar;
+export default BarCharts;
