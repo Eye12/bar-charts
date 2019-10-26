@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import BarCharts from "./components/BarCharts";
 import "./style/global.scss";
 
-class Index extends Component {
+class Demo extends Component {
     render() {
         return (
             <BarCharts scaleDirectionY={"left"} xAxisScaleAlign={"side"} xAxisTxtAlign={"center"} firstScaleY={false} firstScaleX={true}
@@ -12,4 +12,4 @@ class Index extends Component {
     }
 }
 
-ReactDOM.render(<Index/>, document.getElementById("root"));
+ReactDOM.render(<Demo/>, document.getElementById("root"));
