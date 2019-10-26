@@ -1,4 +1,4 @@
-# bar-charts
+# bar-charts-react
 This is a flexible bar charts. you can choose some properties as you want. to make the bar charts as you want
 ![Image text](https://raw.githubusercontent.com/Eye12/img-folder/master/img/bar-charts.jpg)
 
