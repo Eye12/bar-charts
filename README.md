@@ -2,12 +2,12 @@
 This is a flexible bar charts. you can choose some properties as you want. to make the bar charts as you want
 ![Image text](https://raw.githubusercontent.com/Eye12/img-folder/master/img/bar-charts.jpg)
 
-##Installation <br/>
+## Installation <br/>
 npm install bar-charts-react --dev
 /
 yarn add bar-charts-react --dev
 
-##Example <br/>
+## Example <br/>
     
     import React, {Component} from "react";
     import ReactDOM from "react-dom";
@@ -25,5 +25,5 @@ yarn add bar-charts-react --dev
     ReactDOM.render(<Demo/>, document.getElementById("root"));
     
     
-##Properties <br/>
+## Properties <br/>
 
