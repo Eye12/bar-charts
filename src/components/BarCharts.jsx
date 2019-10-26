@@ -27,7 +27,6 @@ import {
     BASE_TEXT_ALIGN,
     SCALE_BOUNDARY_GAP,
     SCALE_LENGTH,
-    SCALE_DIRECTION_X,
     SCALE_DIRECTION_Y,
     FIRST_SCALE_X,
     FIRST_SCALE_Y,
@@ -67,7 +66,6 @@ class BarCharts extends Component {
     ltopTitleTipsColor = this.props.ltopTitleTipsColor || BASE_LTOP_TITLE_TIPS_COLOR;
     ltopTitleMargin = this.props.ltopTitleMargin || BASE_LTOP_TITLE_MARGIN;
     scaleLength = this.props.scaleLength || SCALE_LENGTH;
-    scaleDirectionX = this.props.scaleDirectionX || SCALE_DIRECTION_X;
     scaleDirectionY = this.props.scaleDirectionY || SCALE_DIRECTION_Y;
     scaleBoundaryGap = this.props.scaleBoundaryGap || SCALE_BOUNDARY_GAP;
     scaleTextFont = this.props.scaleTextFont || BASE_FONT;
@@ -229,18 +227,16 @@ class BarCharts extends Component {
                 ltopTitleMargin,
                 ltopTitleHeight,
                 scaleLength,
-                scaleDirectionX,
                 scaleDirectionY
             } = this,
             {yAxisDatas} = this.state,
             textMaxWidth = getTextMaxWidth(ctx, yAxisDatas, font),
             textMaxHeight = getNumber(font),
-            scaleLengthX = scaleDirectionX === "bottom" ? scaleLength : 0,
             scaleLengthY = scaleDirectionY === "left" ? scaleLength : 0,
             axisStartX = padding * ratio + textMaxWidth + textMargin + scaleLengthY,
             axisEndX = (canvasWidth - padding) * ratio,
             axisStartY = padding * ratio + ltopTitleHeight + ltopTitleMargin,
-            axisEndY = (canvasHeight - padding) * ratio - textMaxHeight - textMargin - scaleLengthX,
+            axisEndY = (canvasHeight - padding) * ratio - textMaxHeight - textMargin,
 
             xAxisStart = {
                 x: axisStartX,

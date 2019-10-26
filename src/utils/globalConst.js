@@ -19,10 +19,9 @@ const BASE_LTOP_TITLE_MARGIN = 30;
 const BASE_TEXT_ALIGN = "left";
 const BASE_LINE = "middle";
 const SCALE_BOUNDARY_GAP = 20; // X、Y轴刻度线边界距离
-const SCALE_DIRECTION_X = "bottom"; // X轴刻度线方向
 const SCALE_DIRECTION_Y = "left"; // Y轴刻度线方向
 const SCALE_LENGTH = 6; // 刻度线长度
-const FIRST_SCALE_X = true; // Y轴开始刻度线是否要
+const FIRST_SCALE_X = true; // X轴0点刻度线是否需要
 const FIRST_SCALE_Y = false; // Y轴开始刻度线是否要
 const BASE_BAR_PADDING = 0; // 柱子内边距
 const X_AXIS_SCALE_ALIGN = "side"; // side为刻度线存在柱子两边 center为刻度线存在柱子中间
@@ -91,7 +90,6 @@ export {
     BASE_TEXT_ALIGN,
     SCALE_BOUNDARY_GAP,
     BASE_LINE,
-    SCALE_DIRECTION_X,
     SCALE_DIRECTION_Y,
     SCALE_LENGTH,
     FIRST_SCALE_X,
