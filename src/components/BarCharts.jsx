@@ -162,14 +162,15 @@ class BarCharts extends Component {
         chartBarCanvas.style.width = canvasWidth + "px";
         chartBarCanvas.style.height = canvasHeight + "px";
 
-        this.painting(ctx);
-    };
-
-    painting = (ctx) => {
         // 先计算X轴旁边文字的开始位置，对齐方式按左对齐
         // 先计算X轴开始位置
         this.writeLTopTitle(ctx);
         this.drawAxis(ctx);
+    };
+
+    // 此方法主暴露给外部用
+    rePainting = () => {
+        this.canvasUpdate();
     };
 
     // 书写左上角标题

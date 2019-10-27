@@ -33,6 +33,7 @@ yarn add bar-charts-react --dev
 | height | 画布高 | number | 300 |
 | xAxisDatas | X轴相关数据 | array | BASE_X_AXIS（见./utils/globalConst.js） |
 | yAxisDatas | Y轴相关数据 | array | BASE_Y_AXIS（见./utils/globalConst.js） |
+| rePainting | 重新绘制 | function | 见demo中如何使用的 |
 | markIndex | 显示指定柱子标记索引值 | number | "none" |
 | font | 基础文字大小以及字体样式 | string | 20px Arial |
 | textMargin | 文字距离刻度线边距 | number | 10 |
@@ -70,9 +71,16 @@ yarn add bar-charts-react --dev
 | markFont | 标记文本字体大小及字体样式 | string | 20px Arial |
 | markTextColor | 标记文本字体颜色 | string | #fff |
 
+## Question
+If you encounter any problems during use the bar-charts, <br/>
+you can go to the bar-charts-react library in github and leave your issue for me. <br/>
+I'll deal with the issue as soon as I see it
+
 ## License
 MIT
+
 ## Keywords
-react&#8195;chart&#8195;react-component&#8195;bar&#8195;canvas&#8195;bar-charts&#8195;self-adaption
+react&#8195;chart&#8195;react-component&#8195;bar&#8195;mobile&#8195
+canvas&#8195;bar-charts&#8195;self-adaption&#8195;flexible bar chatrs&#8195;bar graph
 
 
