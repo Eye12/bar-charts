@@ -29,6 +29,7 @@ class Demo extends Component {
     }
 
     click = () => {
+        // this.barCharts.rePainting();
         this.setState({
             yAxisDatas: [
                 {title: 0, flex: 0, value: 0},
@@ -50,7 +51,7 @@ class Demo extends Component {
         } = this.state;
         return (
             <div>
-                <BarCharts xAxisDatas={xAxisDatas} yAxisDatas={yAxisDatas} scaleDirectionY={"left"}
+                <BarCharts ref={node => this.barCharts = node} xAxisDatas={xAxisDatas} yAxisDatas={yAxisDatas} scaleDirectionY={"left"}
                            xAxisScaleAlign={"side"}
                            xAxisTxtAlign={"center"} firstScaleY={false} firstScaleX={true} markIndex={markIndex}
                            yAxisTextAlign={"right"} gridDashX={[5, 5, 5]} markLineDash={[2, 4, 2, 4]} barPaddinng={10}/>
