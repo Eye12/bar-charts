@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import BarCharts from "./components/BarCharts";
-import "./style/global.scss";
+import "./styles/global.scss";
 
 class Demo extends Component {
     constructor(props) {
@@ -51,11 +51,10 @@ class Demo extends Component {
         } = this.state;
         return (
             <div>
-                <BarCharts ref={node => this.barCharts = node} xAxisDatas={xAxisDatas} yAxisDatas={yAxisDatas} scaleDirectionY={"left"}
-                           xAxisScaleAlign={"side"}
-                           xAxisTxtAlign={"center"} firstScaleY={false} firstScaleX={true} markIndex={markIndex}
-                           yAxisTextAlign={"right"} gridDashX={[5, 5, 5]} markLineDash={[2, 4, 2, 4]} barPaddinng={10}/>
-                <div onClick={this.click}>click me</div>
+                <BarCharts ref={node => this.barCharts = node} xAxisDatas={xAxisDatas} yAxisDatas={yAxisDatas} scaleDirectionY={"left"} xAxisScaleAlign={"side"} xAxisTxtAlign={"center"} firstScaleY={false} firstScaleX={true} markIndex={markIndex} yAxisTextAlign={"right"} gridDashX={[5, 5, 5]} markLineDash={[2, 4, 2, 4]} barPaddinng={10}/>
+                <div style={{textAlign: "center"}}>
+                    <button onClick={this.click} style={{marginLeft: "10px", borderRadius: "4px", backgroundColor: "lightgrey", padding: "5px 10px", color: "#fff", outline: "none", border: "none", boxShadow: "0px 1px 2px grey"}}>Click Me</button>
+                </div>
             </div>
         );
     }

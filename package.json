@@ -1,7 +1,7 @@
 {
   "name": "bar-charts-react",
   "sideEffects": false,
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "This is a flexible bar charts",
   "main": "lib/index.js",
   "private": false,
