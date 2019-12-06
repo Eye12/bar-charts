@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import BarCharts from "bar-charts-react";
+import BarCharts from "./components/BarCharts";
 import "./styles/global.scss";
 
 class Demo extends Component {
